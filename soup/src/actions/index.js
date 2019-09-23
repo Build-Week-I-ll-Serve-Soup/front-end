@@ -6,12 +6,12 @@ export const FETCH_FAILURE = "FETCH_FAILURE";
 
 export const getInventory = () => dispatch => {
     dispatch({type: FETCH_START});
-        axios
+        axiosWithAuth()
             .get()
             .then(res => {
                 dispatch({
                     type: FETCH_SUCCESS,
-                    paylod: res
+                    payload: res
                 })
             })
             .catch(err => console.log(err))
