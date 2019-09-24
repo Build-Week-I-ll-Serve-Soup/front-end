@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 
 const logo = require('/Lambda/week8/buildweek2/soup/src/Landing/serve_soup.png');
@@ -68,12 +69,6 @@ const LogoDiv = styled.div`
     justify-content: center;
     width: 100%;
     height: 75%;`
-
-// const TextDiv = styled.div`
-//     display: flex;
-//     justify-content: center;
-//     width: 100%;
-//     height: 10%;`
 
 const Button = styled.button`
     color: white;
@@ -144,7 +139,7 @@ function Landing() {
                     </TextDiv> */}
                     <ButtonDiv>
                         <Button>Register</Button>
-                        <Button>Sign In</Button>
+                        <Link to={"/login"}><Button>Sign In</Button></Link>
                     </ButtonDiv>
               </BodyContainer>
           </StyledBody>
