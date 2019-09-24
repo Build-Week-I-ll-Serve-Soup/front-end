@@ -1,12 +1,14 @@
 import React from 'react';
-import LoginForm from './Login/Login';
+import Post from './Login/Post';
 // import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  
+
   return (
     <div className="App">
-      <LoginForm/>
+      <Post/>
     </div>
   );
 }

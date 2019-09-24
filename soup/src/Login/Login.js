@@ -1,6 +1,6 @@
 import React from 'react';
-import {Formik, Form, Field,} from 'formik';
-import * as yup from 'yup';
+import {Formik, Form, Field, ErrorMessage} from 'formik';
+import * as Yup from 'yup';
 import styled from 'styled-components';
 
 const Styledfont = styled.h3`
@@ -62,20 +62,19 @@ const Input = styled.input`
     border: 1px solid #999;`
 
 const initialValueForm = {
-    email: '',
+    username: '',
     password: '',
 }
 
-const validationSchema = yup.object().shape({
-    email: yup.string()
-        .required('An email is required'),
-    password: yup.string()
+const validationSchema = Yup.object().shape({
+    username: Yup.string()
+        .required('A username is required'),
+    password: Yup.string()
         .min(6, 'password must be 6 characters or longer')
         .required('A password is required'),
-})
+});
 
-function LoginForm(props){
-    const {onSubmit} = props;
+function LoginForm({onSubmit}){
 
     return(<Formik
         initialValues = {initialValueForm}
@@ -89,18 +88,19 @@ function LoginForm(props){
                             <Styledfont>Sign In</Styledfont>
                             <StyledOuterDiv>
                                 <StyledInnerDiv>
-                                    <Input type='email' name='password' placeholder='Email'/>
+                                    <Field type='text' name='username' placeholder='Username'/>
                                 </StyledInnerDiv>
 
                                 <StyledInnerDiv>
-                                    <Input type='password' name='password' placeholder='Password'/>
+                                    <Field type='password' name='password' placeholder='Password'/>
+                                    {/* <ErrorMessage name="password" component="div" />  */}
                                 </StyledInnerDiv>
 
                                 <StyledInnerDiv>
                                     <Button type='submit'>Login</Button>
                                 </StyledInnerDiv>
                             </StyledOuterDiv>
-                            <p>Don't have an account? <a href='#'>Sign up here!</a></p>
+                            <p>Don't have an account? <a href='google.com'>Sign up here!</a></p>
                         </InnerDiv>
                     </OuterDiv>
                 </Form>
