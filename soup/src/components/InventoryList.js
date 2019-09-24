@@ -1,26 +1,24 @@
-import React from "react";
-import axios from "axios";
+import React, {useEffect} from "react";
+import {getInventory} from '../actions';
 import Card from './Card';
 import {connect} from 'react-redux';
 
 const InventoryList = ({getInventory, inventory, isFetching, error}) => {
-    useEffect(()=>{
-        getInventory()
-    }, [getInventory])
+    useEffect(() => {
+        getInventory();
+    }, [getInventory]);
 
     if(isFetching){
         return <p>Seeing what we have in stock right now . . .</p>
     }
 
-    console.log(inventory)
-
     return(
         <div>
         {inventory.map(item =>
             <Card
-                name={item.name}
+                name={item.item_name}
                 quantity={item.quantity}
-                measure={item.measure}
+                measure={item.unit_name}
         />)}
         </div>
     )

@@ -1,8 +1,12 @@
 import React from "react";
 
-export const Card = props => {
+function Card(props){
+    return(
     <div className="card">
     <h3>{props.name}</h3>
     <p>Quantity: {props.quantity} {props.measure}</p>
     </div>
+    )
 }
+
+export default Card;
