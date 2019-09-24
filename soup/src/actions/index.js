@@ -7,7 +7,7 @@ export const FETCH_FAILURE = "FETCH_FAILURE";
 export const getInventory = () => dispatch => {
     dispatch({type: FETCH_START});
         axiosWithAuth()
-            .get()
+            .get('https://serve-soups.herokuapp.com/api/inventory')
             .then(res => {
                 dispatch({
                     type: FETCH_SUCCESS,
@@ -16,3 +16,4 @@ export const getInventory = () => dispatch => {
             })
             .catch(err => console.log(err))
 }
+
