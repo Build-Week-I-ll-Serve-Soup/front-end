@@ -1,5 +1,5 @@
 import React from 'react';
-import {Formik, Form, Field, ErrorMessage} from 'formik';
+import {Formik, Form, Field} from 'formik';
 import * as Yup from 'yup';
 import styled from 'styled-components';
 
@@ -56,10 +56,6 @@ const Button = styled.button`
     text-decoration: none;
     border: 0;
     cursor: pointer;`
-
-const Input = styled.input`
-    font-size: 1.5em;
-    border: 1px solid #999;`
 
 const initialValueForm = {
     username: '',

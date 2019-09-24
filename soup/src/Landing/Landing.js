@@ -10,7 +10,7 @@ const StyledContainer = styled.div`
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background-color: orangered;`
+    background-color: orange;`
 
 const StyledHeader = styled.div`
     display: flex;
@@ -24,7 +24,7 @@ const InnerStyledHeader = styled.div`
     width: 80%;
     padding: 0.5em;
     justify-content: center;
-    background-color: orange;
+    background-color: grey;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     margin: 0 auto;`
@@ -52,7 +52,7 @@ const BodyContainer = styled.div`
     width: 90%;
     height: 95%;
     margin: 0.3em;
-    background-color: orange;
+    background-color: grey;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     transition: 0.3s;`
 
@@ -77,7 +77,7 @@ const LogoDiv = styled.div`
 
 const Button = styled.button`
     color: white;
-    background-color: orangered;
+    background-color: orange;
     text-transform: uppercase;
     text-align: center;
     font-size: 1.3em;
@@ -90,17 +90,24 @@ const Button = styled.button`
     cursor: pointer;
     
     &:hover {
-    background-color: green;}`;
+    background-color: green;
+    color: gold;
+    letter-spacing: 1px;
+    transition: all 0.4s ease 0s;
+    box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);}`;
 
 const StyledH3 = styled.h3`
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2.0em;
     margin: 0.8em;
-    color: orangered;
+    color: orange;
     cursor: pointer;
     
     &:hover {
-    color: green;}`
+    color: gold;
+    letter-spacing: 1px;
+    transition: all 0.4s ease 0s;
+    box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);}`
 
 const ImgDiv = styled.div`
     display: flex;
