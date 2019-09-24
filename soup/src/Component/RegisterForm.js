@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import {connect} from 'react-redux';
+import {signUp} from '../actions';
 import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components"
@@ -65,7 +66,7 @@ const UserForm = ({ errors, touched, values, status }) => {
 };
 
 
-const FormikUserForm = withFormik({
+export default connect (null, {signUp})(withFormik({
   mapPropsToValues({ name, email, role, tos, password }) {
     return {
       tos: tos || false,
@@ -85,6 +86,4 @@ const FormikUserForm = withFormik({
       .required("Please choose one!")
   }),
 
-})(UserForm); // currying functions in Javascript
-console.log("This is the HOC", FormikUserForm);
-export default FormikUserForm;
+})(UserForm)); 
