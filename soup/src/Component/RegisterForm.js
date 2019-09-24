@@ -85,16 +85,6 @@ const FormikUserForm = withFormik({
       .required("Please choose one!")
   }),
 
-  handleSubmit(values, { setStatus }) {
-    axios
-      // values is our object with all our data on it.
-      .post("https://serve-soups.herokuapp.com/api/auth/register", values)
-      .then(res => {
-        setStatus(res.data);
-        console.log(res);
-      })
-      .catch(err => console.log(err.response));
-  }
 })(UserForm); // currying functions in Javascript
 console.log("This is the HOC", FormikUserForm);
 export default FormikUserForm;
