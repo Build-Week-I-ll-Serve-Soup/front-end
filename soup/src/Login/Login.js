@@ -2,6 +2,7 @@ import React from 'react';
 import {Formik, Form, Field} from 'formik';
 import * as Yup from 'yup';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const Styledfont = styled.h3`
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -96,7 +97,7 @@ function LoginForm({onSubmit}){
                                     <Button type='submit'>Login</Button>
                                 </StyledInnerDiv>
                             </StyledOuterDiv>
-                            <p>Don't have an account? <a href='google.com'>Sign up here!</a></p>
+                            <p>Don't have an account? <a href='#'>Sign up here!</a></p>
                         </InnerDiv>
                     </OuterDiv>
                 </Form>
