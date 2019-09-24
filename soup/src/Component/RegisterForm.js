@@ -11,8 +11,7 @@ const StyledDiv = styled.div`
     padding: 32px;
     padding-right: 50px;
     font-weight: bold;
-    background-color: #BB4142;
-    
+    background-color: #BB4142;    
 `
 const StyledButton = styled.button`
     max-width: 150px;
@@ -23,9 +22,7 @@ const StyledButton = styled.button`
     font-size: 17px;
     font-weight: 500;
     color: #fff;
-
 `
-
 
 
 const UserForm = ({ errors, touched, values, status }) => {
@@ -85,5 +82,15 @@ export default connect (null, {signUp})(withFormik({
       .oneOf(["Admin", "Volunteer", "Manager"])
       .required("Please choose one!")
   }),
+  handleSubmit(values, { props }) {
+    props.signUp(
+      {
+        username: values.username,
+        password: values.password,
+        email: values.email,
+        location: values.userLocation
+      }
+    );
+  }
 
 })(UserForm)); 
