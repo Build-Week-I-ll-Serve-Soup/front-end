@@ -11,7 +11,7 @@ const StyledContainer = styled.div`
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background-color: orange;`
+    background-color: gold;`
 
 const StyledHeader = styled.div`
     display: flex;
@@ -25,7 +25,7 @@ const InnerStyledHeader = styled.div`
     width: 80%;
     padding: 0.5em;
     justify-content: center;
-    background-color: grey;
+    background-color: lightslategrey;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     margin: 0 auto;`
@@ -53,7 +53,7 @@ const BodyContainer = styled.div`
     width: 90%;
     height: 95%;
     margin: 0.3em;
-    background-color: grey;
+    background-color: lightslategray;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     transition: 0.3s;`
 
