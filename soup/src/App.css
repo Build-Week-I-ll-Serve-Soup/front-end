@@ -7,18 +7,21 @@ body{
     display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 4rem;
+    margin: 2rem;
 }
 
 .card{
     flex-grow: 1;
     border: 1px dotted black;
-    margin: 2rem;
+    margin: 1rem;
     padding: 1rem;
     background-color: lightsalmon;
     color: black;
 }
 
 .add{
-    margin: auto 45%;
+    margin: 0 3rem;
+    padding: 2rem;
+    font-size: 2rem;
+    border-radius: 20px;
 }

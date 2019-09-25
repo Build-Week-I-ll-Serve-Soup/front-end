@@ -12,7 +12,6 @@ const InventoryList = ({getInventory, inventory, isFetching, error}) => {
     if(isFetching){
         return <p>Seeing what we have in stock right now . . .</p>
     }
-console.log(inventory);
     return(
         <>
         <div className="deck">
@@ -20,6 +19,7 @@ console.log(inventory);
             <Card
                 name={item.item_name}
                 quantity={item.quantity}
+                cost={item.price}
         />)}
         </div>
         <Link to="/add"><button className="add">Add Something</button></Link>

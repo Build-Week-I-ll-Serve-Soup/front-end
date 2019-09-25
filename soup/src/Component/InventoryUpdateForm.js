@@ -53,7 +53,7 @@ const InvForm = (props) => {
 	  kit_id: "",
 	  unit_id: "",
 	  cat_id: "",
-	  user_id:""
+	  user_id: ""
   });
 
   const addItem = (e) => {
