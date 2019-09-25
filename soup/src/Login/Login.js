@@ -68,7 +68,7 @@ const Login = (props) => {
       e.preventDefault();
        axiosWithAuth()
           .post('https://serve-soups.herokuapp.com/api/auth/login', creds)
-          .then(res => {localStorage.setItem('token', res.token);
+          .then(res => {localStorage.setItem('token', res.data.token);
           props.history.push('/inventory')
       })}
   

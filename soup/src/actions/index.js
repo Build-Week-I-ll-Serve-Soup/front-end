@@ -12,7 +12,7 @@ export const getInventory = () => dispatch => {
             .then(res => {
                 dispatch({
                     type: FETCH_SUCCESS,
-                    payload: res
+                    payload: res.data
                 })
             })
             .catch(err => console.log(err))

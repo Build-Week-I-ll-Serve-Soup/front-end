@@ -110,13 +110,15 @@ const ImgDiv = styled.div`
 
 function Landing() {
   
+    const logo = require('./serve_soup.png');
+    const logotext = require('./shrinktext_soup2.png');
 
     return (
       <StyledContainer>
           <StyledHeader>
             <InnerStyledHeader>
                 <HomeDiv>
-                    {/* <img src='src/shrinktext_soup2.png' alt="serve-soup-text"/> */}
+                    <img src={logotext} alt="serve-soup-text"/>
                 </HomeDiv>
                 <NavDiv>
                     <StyledH3><a href="#">About</a></StyledH3>
@@ -128,7 +130,7 @@ function Landing() {
                 <BodyContainer>
                     <LogoDiv>
                         <ImgDiv>
-                            {/* <img src='serve_soup.png' alt="serve-soup"/> */}
+                            <img src={logo} alt="serve-soup"/>
                         </ImgDiv>
                     </LogoDiv>
                     {/* <TextDiv>
