@@ -138,7 +138,7 @@ function Landing() {
                         <StyledH3>Welcome to I'll Serve Soup</StyledH3>
                     </TextDiv> */}
                     <ButtonDiv>
-                        <Button>Register</Button>
+                        <Link to={"/register"}><Button>Register</Button></Link>
                         <Link to={"/login"}><Button>Sign In</Button></Link>
                     </ButtonDiv>
               </BodyContainer>
