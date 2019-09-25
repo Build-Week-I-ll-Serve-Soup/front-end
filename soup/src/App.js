@@ -8,7 +8,6 @@ import FormikUpdateForm from './Component/InventoryUpdateForm'
 function App() {
   return (
     <div className="App">
-     {/* < FormikUserForm /> */}
      < FormikUpdateForm/>
     </div>
   );
