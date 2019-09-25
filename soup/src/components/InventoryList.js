@@ -12,17 +12,18 @@ const InventoryList = ({getInventory, inventory, isFetching, error}) => {
     if(isFetching){
         return <p>Seeing what we have in stock right now . . .</p>
     }
-
+console.log(inventory);
     return(
-        <div>
+        <>
+        <div className="deck">
         {inventory.map(item =>
             <Card
                 name={item.item_name}
                 quantity={item.quantity}
-                measure={item.unit}
         />)}
-        <Link to="/add"><button>Add Something</button></Link>
         </div>
+        <Link to="/add"><button className="add">Add Something</button></Link>
+        </>
     )
 }
 
