@@ -1,21 +1,21 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Post from './Login/Post';
+import PrivateRoute from './components/PrivateRoute.js';
+import Login from './Login/Login';
 import Landing from './Landing/Landing';
-// import logo from './logo.svg';
+import InventoryList from './components/InventoryList';
 import './App.css';
-import FormikUserForm from './Component/RegisterForm';
+import UserForm from './Component/RegisterForm';
 import './Component/RegisterStyle.css'
-import FormikUpdateForm from './Component/InventoryUpdateForm'
 
 function App() {
-  
 
   return (
     <div className="App">
       <Route exact path='/' component ={Landing}/>
-      <Route path='/login' component={Post}/>
-      <Route  path='/register' component={FormikUserForm}/>
+      <Route path='/login' component={Login}/>
+      <Route path='/register' component={UserForm}/>
+      <PrivateRoute path='/inventory' component={InventoryList}/>
     </div>
   );
 }

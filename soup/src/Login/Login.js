@@ -1,6 +1,5 @@
-import React from 'react';
-import {Formik, Form, Field} from 'formik';
-import * as Yup from 'yup';
+import React, {useState} from 'react';
+import {axiosWithAuth} from '../utils/axiosWithAuth';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -58,54 +57,65 @@ const Button = styled.button`
     border: 0;
     cursor: pointer;`
 
-const initialValueForm = {
-    username: '',
-    password: '',
-}
-
-const validationSchema = Yup.object().shape({
-    username: Yup.string()
-        .required('A username is required'),
-    password: Yup.string()
-        .min(6, 'password must be 6 characters or longer')
-        .required('A password is required'),
-});
-
-function LoginForm({onSubmit}){
-
-    return(<Formik
-        initialValues = {initialValueForm}
-        onSubmit = {onSubmit}
-        validationSchema = {validationSchema}
-        render={props => {
-            return (
-                <Form>
-                    <OuterDiv>
-                        <InnerDiv>
-                            <Styledfont>Sign In</Styledfont>
-                            <StyledOuterDiv>
-                                <StyledInnerDiv>
-                                    <Field type='text' name='username' placeholder='Username'/>
-                                </StyledInnerDiv>
-
-                                <StyledInnerDiv>
-                                    <Field type='password' name='password' placeholder='Password'/>
-                                    {/* <ErrorMessage name="password" component="div" />  */}
-                                </StyledInnerDiv>
-
-                                <StyledInnerDiv>
-                                    <Button type='submit'>Login</Button>
-                                </StyledInnerDiv>
-                            </StyledOuterDiv>
-                            <p>Don't have an account? <a href='#'>Sign up here!</a></p>
-                        </InnerDiv>
-                    </OuterDiv>
-                </Form>
-            );
-        }}
-    
-    />);
-
-}
-
-export default LoginForm;
+const Login = (props) => {
+  
+    const [creds, setCreds] = useState({
+      username: '', 
+      password: ''
+    });
+  
+    const login = (e) => {
+      e.preventDefault();
+       axiosWithAuth()
+          .post('https://serve-soups.herokuapp.com/api/auth/login', creds)
+          .then(res => {localStorage.setItem('token', res.token);
+          props.history.push('/inventory')
+      })}
+  
+      const handleChange = e => {
+          setCreds({
+              ...creds,
+              [e.target.name]: e.target.value
+          })
+      }
+  
+  
+    return (
+      <>
+      <StyledOuterDiv>
+      <OuterDiv>
+          <InnerDiv>
+      <Styledfont>Please log in!</Styledfont>
+        <form onSubmit={login}>
+            <StyledInnerDiv>
+          <input
+          type="text"
+          name="username"
+          value={creds.username}
+          placeholder="Username"
+          onChange={handleChange}
+          />
+          </StyledInnerDiv>
+          <StyledInnerDiv>
+          <input
+          type="password"
+          name="password"
+          value={creds.password}
+          placeholder="Password"
+          onChange={handleChange}
+          />
+          </StyledInnerDiv>
+          <StyledInnerDiv>
+          <Button>Login</Button>
+          </StyledInnerDiv>
+        </form>
+        <p>Don't have an account? <Link to="/register">Sign up here!</Link></p>
+        </InnerDiv>
+        </OuterDiv>
+        </StyledOuterDiv>
+      </>
+    );
+  };
+  
+  export default Login;
+  
