@@ -12,7 +12,7 @@ export const getInventory = () => dispatch => {
             .then(res => {
                 dispatch({
                     type: FETCH_SUCCESS,
-                    payload: res
+                    payload: res.data
                 })
             })
             .catch(err => console.log(err))
@@ -28,8 +28,8 @@ export const signUp = (user, history) => {
     axios
         .post('https://serve-soups.herokuapp.com/api/auth/register', user)
         .then(res => {
-            dispatch({type: REGISTER_SUCCESS, payload: res.data});
-            history.push('/');
+            dispatch({type: REGISTER_SUCCESS, payload: res});
+            history.push('/login');
         })
         .catch(err => {
             dispatch({type: REGISTER_FAILURE, payload: err});

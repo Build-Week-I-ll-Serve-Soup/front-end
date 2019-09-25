@@ -3,9 +3,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 
-const logo = require('/Lambda/week8/buildweek2/soup/src/Landing/serve_soup.png');
-const logotext = require('/Lambda/week8/buildweek2/soup/src/Landing/shrinktext_soup2.png');
-
 const StyledContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -113,6 +110,8 @@ const ImgDiv = styled.div`
 
 function Landing() {
   
+    const logo = require('./serve_soup.png');
+    const logotext = require('./shrinktext_soup2.png');
 
     return (
       <StyledContainer>
@@ -122,8 +121,8 @@ function Landing() {
                     <img src={logotext} alt="serve-soup-text"/>
                 </HomeDiv>
                 <NavDiv>
-                    <StyledH3><a>About</a></StyledH3>
-                    <StyledH3><a>Home</a></StyledH3>
+                    <StyledH3><a href="#">About</a></StyledH3>
+                    <StyledH3><a href="#">Home</a></StyledH3>
                 </NavDiv>
             </InnerStyledHeader>
           </StyledHeader>
