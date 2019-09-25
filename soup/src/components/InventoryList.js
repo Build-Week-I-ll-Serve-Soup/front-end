@@ -1,4 +1,5 @@
 import React, {useEffect} from "react";
+import {Link} from "react-router-dom";
 import {getInventory} from '../actions';
 import Card from './Card';
 import {connect} from 'react-redux';
@@ -18,8 +19,9 @@ const InventoryList = ({getInventory, inventory, isFetching, error}) => {
             <Card
                 name={item.item_name}
                 quantity={item.quantity}
-                measure={item.unit_name}
+                measure={item.unit}
         />)}
+        <Link to="/add"><button>Add Something</button></Link>
         </div>
     )
 }

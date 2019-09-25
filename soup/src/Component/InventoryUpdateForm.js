@@ -45,7 +45,7 @@ const StyledButton1 = styled.button`
 
 `
 
-const UserForm = ({ errors, touched, values, status }) => {
+const InvForm = ({ errors, touched, values, status }) => {
   const [update, setUpdate] = useState([]);
   useEffect(() => {
     status && setUpdate(update => [...update, status]);
@@ -133,6 +133,6 @@ const FormikUpdateForm = withFormik({
       })
       .catch(err => console.log(err.response));
   }
-})(UserForm); 
+})(InvForm); 
 console.log("This is the HOC", FormikUpdateForm);
 export default FormikUpdateForm;
