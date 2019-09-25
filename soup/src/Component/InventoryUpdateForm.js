@@ -10,8 +10,10 @@ const StyledDiv = styled.div`
     padding: 32px;
     padding-right: 50px;
     font-weight: bold;
-    background-color: #BB4142;
-    
+    background-color: #CA5930;
+    border: 2px dotted black;
+    margin-bottom:15px;
+    margin-top:10px;
 `
 const StyledButton = styled.button`
     max-width: 150px;
@@ -22,6 +24,24 @@ const StyledButton = styled.button`
     font-size: 17px;
     font-weight: 500;
     color: #fff;
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+
+`
+const StyledButton1 = styled.button`
+    max-width: 150px;
+    padding: 12px 20px;
+    border-style: none;
+    background-color: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    font-size: 17px;
+    font-weight: 500;
+    color: #52B402;
+    margin-top:20px;
+    display:flex;
+    justify-content:space-between;
+    border:2px solid #52B402;
 
 `
 
@@ -36,72 +56,72 @@ const UserForm = ({ errors, touched, values, status }) => {
     <StyledDiv className="Update-form"> 
           <h1>Update Inventory</h1>
       <Form>
-        <Field type="text" name="name" placeholder="item name" />
-        {touched.name && errors.name && (
-          <p className="error">{errors.name}</p>
+        <Field type="text" name="item_name" placeholder="item name" />
+        {touched.item_name && errors.item_name && (
+          <p className="error">{errors.item_name}</p>
         )}
 
-        <Field type="number" name="amount" placeholder="amount" />
-        {touched.amount && errors.amount && <p className="error">{errors.amount}</p>}
-        
-         <h2>Category</h2>
-        <Field component="select" className="amount-select" name="amountNumber">
+        <Field type="number" name="quantity" placeholder="quantity" />
+        {touched.quantity && errors.quantity && <p className="error">{errors.quantity}</p>}
+           
+        <Field type="text" name="unit" placeholder="unit" />
+        {touched.unit && errors.unit && <p className="error">{errors.unit}</p>}
+
+        {touched.catNumber && errors.catNumber && <p className="error">{errors.catNumber}</p>}
+            <h2>Category</h2>
+         <Field component="select" className="cat-name" name="cat_name">
           <option>Please Choose an Option</option>
           <option value="produce">Produce</option>
           <option value="dairy">Dairy</option>
           <option value="canned">Canned goods</option>
-          <option value="dry">dried goods</option>
+          <option value="dry">Dried goods</option>
           <option value="other">Other</option>
         </Field>
-        {touched.amountNumber && errors.amountNumber && <p className="error">{errors.amountNumber}</p>}
+        {touched.cat_name && errors.cat_name && <p className="error">{errors.cat_name}</p>}
+
+        <Field type="text" name="price" placeholder="price" />
+        {touched.price && errors.price && <p className="error">{errors.price}</p>}
+
+         <h2>Alert when when below</h2>
+        <Field type="number" name="alert_when" placeholder="number" />
+        {touched.alert_when && errors.alert_when && <p className="error">{errors.alert_when}</p>}
         
-         <h2>Amount</h2>
-        <Field component="select" className="cat-select" name="catNumber">
+        <Field component="select" className="cat_name" name="cat_name">
           <option>Please Choose an Option</option>
           <option value="pounds">Pounds</option>
           <option value="grams">Grams</option>
           <option value="cups">Cups</option>
           <option value="packages">Packages</option>
           <option value="cans">Cans</option>
+          <option value="other">other</option>
         </Field>
-        {touched.catNumber && errors.catNumber && <p className="error">{errors.catNumber}</p>}
-         
-         <h2>Alert when below</h2>
-        <Field type="number" name="alert" placeholder="number" />
-        {touched.alert && errors.alert && <p className="error">{errors.alert}</p>}
-        
-        <Field component="select" className="cat-select" name="alertNumber">
-          <option>Please Choose an Option</option>
-          <option value="pounds">Pounds</option>
-          <option value="grams">Grams</option>
-          <option value="cups">Cups</option>
-          <option value="packages">Packages</option>
-          <option value="cans">Cans</option>
-        </Field>
-        {touched.alertNumber && errors.alertNumber && <p className="error">{errors.alertNumber}</p>}
+        {touched.cat_name && errors.cat_name && <p className="error">{errors.cat_name}</p>}
       </Form>
          <StyledButton type="submit">Update!</StyledButton>
+         <StyledButton1 type="submit">Discard!</StyledButton1>
  </StyledDiv>
   );
 };
 
 
 const FormikUpdateForm = withFormik({
-  mapPropsToValues({ name, amount, amountNumber, alert }) {
+  mapPropsToValues({ item_name, unit, quantity, cat_name, alert_when }) {
     return {
-      amountNumber: amountNumber || "",
-      name: name || "",
-      amount: amount || "",
-      alert: alert || "",
+      cat_name: cat_name || "",
+      item_name: item_name || "",
+      quantity: quantity || "",
+      alert_when: alert_when || "",
+      unit: unit || "",
     };
   },
 
   validationSchema: Yup.object().shape({
-    name: Yup.string().required("Username required"),
-    amount: Yup.string().required("amount Required"),
-    alert: Yup.string().required("alert Required"),
-    amountNumber: Yup.string()
-      .required("Please choose one!")
+    item_name: Yup.string().required("item required"),
+    quantity: Yup.string().required("amount Required"),
+    alert_when: Yup.string().required("please choose a number"),
+    cat_name: Yup.string()
+      .required("Please choose one!"),
+    unit: Yup.string("unit required")
   }),
 
   handleSubmit(values, { setStatus }) {
