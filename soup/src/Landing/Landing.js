@@ -121,8 +121,8 @@ function Landing() {
                     <img src={logotext} alt="serve-soup-text"/>
                 </HomeDiv>
                 <NavDiv>
-                    <StyledH3><a href="#">About</a></StyledH3>
-                    <StyledH3><a href="#">Home</a></StyledH3>
+                    <StyledH3><a href="https://illservesouplambda.netlify.com/">About</a></StyledH3>
+                    <StyledH3><Link to="/">Home</Link></StyledH3>
                 </NavDiv>
             </InnerStyledHeader>
           </StyledHeader>

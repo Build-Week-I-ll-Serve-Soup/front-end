@@ -25,3 +25,8 @@ body{
     font-size: 2rem;
     border-radius: 20px;
 }
+
+.edit{
+    width: 50%;
+    margin: 1rem auto;
+}
