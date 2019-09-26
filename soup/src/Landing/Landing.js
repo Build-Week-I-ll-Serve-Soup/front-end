@@ -12,7 +12,7 @@ const StyledContainer = styled.div`
 
 const StyledHeader = styled.div`
     display: flex;
-    width: 100vw;
+    width: 96vw;
     height: 20vh;
     align-content: center;
     padding: 1em;`

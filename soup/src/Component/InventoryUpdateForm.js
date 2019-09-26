@@ -4,14 +4,9 @@ import styled from "styled-components"
 
 const StyledDiv = styled.div`
     width: 50%;
-    margin-left: 100px;
-    padding: 32px;
-    padding-right: 50px;
-    font-weight: bold;
-    background-color: #CA5930;
-    border: 2px dotted black;
-    margin-bottom:15px;
-    margin-top:10px;
+    padding:25%;
+    background-color: #BB4142;
+    padding-top:5%;
 `
 const StyledButton = styled.button`
     max-width: 150px;
@@ -25,7 +20,6 @@ const StyledButton = styled.button`
     margin-top:20px;
     display:flex;
     justify-content:space-between;
-
 `
 const StyledButton1 = styled.button`
     max-width: 150px;
@@ -40,7 +34,6 @@ const StyledButton1 = styled.button`
     display:flex;
     justify-content:space-between;
     border:2px solid #52B402;
-
 `
 
 const InvForm = (props) => {
@@ -75,7 +68,7 @@ const InvForm = (props) => {
   return (
     <>
     <StyledDiv>
-    <h1>Registration</h1>
+    <h1>Update Form</h1>
       <form onSubmit={addItem}>
         <input
         type="text"

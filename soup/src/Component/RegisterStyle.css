@@ -1,25 +1,29 @@
-
-body{
-    color: #CDC59C;
-    margin-top:50px;
-    background-color:#BB4142;
-  }
+/* body{
+  color: #CDC59C;
+  margin-top:50px;
+  background-color:#BB4142;
+} */
 
 input {
   margin-top: 32px;
   padding: 0.5rem;
   font-size: 16px;
-  width: 100%;
-  display: block;
+  width: 95%;
   color: #4d2d52;
   border: 2px solid rgba(77, 45, 82, 0.8);
+  display:block;
+} 
+.registration-form input{
+  width:80%;
 }
-  
+
+
+
 .role-select{
     display: block;
     color: #444;
     padding: 0.6em 1.4em 0.5em 0.8em;
-    width: 50%;
+    width: 30%;
     box-sizing: border-box;
     margin-top: 32px;
     margin-bottom:32px;
