@@ -4,17 +4,16 @@ import { Form, Field, withFormik } from "formik";
 import * as Yup from "yup";
 import styled from "styled-components"
 
-const StyledDiv = styled.div`
-    width: 50%;
-    margin-left: 100px;
-    padding: 32px;
-    padding-right: 50px;
+const StyledDov = styled.div`
+    max-width: 100%;
+    padding:30%;
+    padding-top:5%;
+    padding-bottom:5%;
     font-weight: bold;
-    background-color: #CA5930;
-    border: 2px dotted black;
-    margin-bottom:15px;
-    margin-top:10px;
+    background-color: #BB4142;
+    
 `
+
 const StyledButton = styled.button`
     max-width: 150px;
     padding: 12px 20px;
@@ -29,6 +28,7 @@ const StyledButton = styled.button`
     justify-content:space-between;
 
 `
+
 const StyledButton1 = styled.button`
     max-width: 150px;
     padding: 12px 20px;
@@ -53,8 +53,9 @@ const UserForm = ({ errors, touched, values, status }) => {
 
   return (
     
-    <StyledDiv className="Update-form"> 
+    <StyledDov className="Update-form"> 
           <h1>Update Inventory</h1>
+      <div>
       <Form>
         <Field type="text" name="item_name" placeholder="item name" />
         {touched.item_name && errors.item_name && (
@@ -99,7 +100,8 @@ const UserForm = ({ errors, touched, values, status }) => {
       </Form>
          <StyledButton type="submit">Update!</StyledButton>
          <StyledButton1 type="submit">Discard!</StyledButton1>
- </StyledDiv>
+  </div>
+ </StyledDov>
   );
 };
 

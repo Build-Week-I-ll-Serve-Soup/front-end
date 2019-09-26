@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 
-const logo = require('/Lambda/week8/buildweek2/soup/src/Landing/serve_soup.png');
-const logotext = require('/Lambda/week8/buildweek2/soup/src/Landing/shrinktext_soup2.png');
+const logo = require('./serve_soup.png');
+const logotext = require('./shrinktext_soup2.png');
 
 const StyledContainer = styled.div`
     display: flex;
@@ -15,7 +15,7 @@ const StyledContainer = styled.div`
 
 const StyledHeader = styled.div`
     display: flex;
-    width: 100vw;
+    width: 96vw;
     height: 20vh;
     align-content: center;
     padding: 1em;`

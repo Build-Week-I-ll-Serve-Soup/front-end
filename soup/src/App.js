@@ -16,6 +16,7 @@ function App() {
       <Route exact path='/' component ={Landing}/>
       <Route path='/login' component={Post}/>
       <Route  path='/register' component={FormikUserForm}/>
+      <Route  path='/inventory' component={FormikUpdateForm}/>
     </div>
   );
 }

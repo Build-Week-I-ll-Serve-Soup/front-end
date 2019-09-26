@@ -7,9 +7,9 @@ import styled from "styled-components"
 
 const StyledDiv = styled.div`
     width: 50%;
-    margin-left: 100px;
-    padding: 32px;
-    padding-right: 50px;
+    padding: 25%;
+    padding-top:5%;
+    padding-bottom:35%;
     font-weight: bold;
     background-color: #BB4142;    
 `
@@ -50,7 +50,7 @@ const UserForm = ({ errors, touched, values, status }) => {
 
          <h2>Your Role</h2>
         <Field component="select" className="role-select" name="role">
-          <option>Please Choose an Option</option>
+          <option>Choose an Option</option>
           <option value="Admin">Admin</option>
           <option value="Manager">Manager</option>
           <option value="Volunteer">Volunteer</option>
