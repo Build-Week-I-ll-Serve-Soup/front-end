@@ -15,7 +15,7 @@ const StyledContainer = styled.div`
 
 const StyledHeader = styled.div`
     display: flex;
-    width: 100vw;
+    width: 96vw;
     height: 20vh;
     align-content: center;
     padding: 1em;`
@@ -122,8 +122,8 @@ function Landing() {
                     <img src={logotext} alt="serve-soup-text"/>
                 </HomeDiv>
                 <NavDiv>
-                    <StyledH3><a>About</a></StyledH3>
-                    <StyledH3><a>Home</a></StyledH3>
+                    <StyledH3><a href="https://illservesouplambda.netlify.com/">About</a></StyledH3>
+                    <StyledH3><Link to="/">Home</Link></StyledH3>
                 </NavDiv>
             </InnerStyledHeader>
           </StyledHeader>

@@ -4,9 +4,9 @@ import styled from "styled-components"
 
 const StyledDiv = styled.div`
     width: 50%;
-    margin-left: 100px;
-    padding: 32px;
-    padding-right: 50px;
+    padding: 25%;
+    padding-top:5%;
+    padding-bottom:35%;
     font-weight: bold;
     background-color: #BB4142;    
 `
