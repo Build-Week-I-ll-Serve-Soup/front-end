@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {connect} from 'react-redux';
-import {signUp} from '../actions';
-import { Form, Field, withFormik } from "formik";
-import * as Yup from "yup";
+import axios from "axios";
 import styled from "styled-components"
 
 const StyledDiv = styled.div`
@@ -24,73 +21,66 @@ const StyledButton = styled.button`
     color: #fff;
 `
 
+const UserForm = (props) => {
+  
+  const [creds, setCreds] = useState({
+    username: '',
+    email: '', 
+    password: '',
+    kit_id: Date.now()
+  });
 
-const UserForm = ({ errors, touched, values, status }) => {
-  const [user, setuser] = useState([]);
-  useEffect(() => {
-    status && setuser(user => [...user, status]);
-  }, [status]);
+  const register = (e) => {
+    e.preventDefault();
+     axios
+        .post('https://serve-soups.herokuapp.com/api/auth/register', creds)
+        .then(res => console.log(res))
+        props.history.push('/login')
+    }
+
+    const handleChange = e => {
+        setCreds({
+            ...creds,
+            [e.target.name]: e.target.value
+        })
+    }
+
 
   return (
-    
-    <StyledDiv className="registration-form"> 
-          <h1>Registration</h1>
-      <Form>
-        <Field type="text" name="name" placeholder="Username" />
-        {touched.name && errors.name && (
-          <p className="error">{errors.name}</p>
-        )}
+    <>
+    <StyledDiv>
+    <h1>Registration</h1>
+      <form onSubmit={register}>
+        <input
+        type="text"
+        name="username"
+        value={creds.username}
+        placeholder="Username"
+        onChange={handleChange}
+        />
+      
+      <input
+        type="text"
+        name="email"
+        value={creds.email}
+        placeholder="Email"
+        onChange={handleChange}
+        />
 
-        <Field type="text" name="email" placeholder="email" />
-        {touched.email && errors.email && <p className="error">{errors.email}</p>}
-
-        <Field type="password" name="password" placeholder="password" />
-        {touched.password && errors.password && <p className="error">{errors.password}</p>}
-
-
-         <h2>Your Role</h2>
-        <Field component="select" className="role-select" name="role">
-          <option>Choose an Option</option>
-          <option value="Admin">Admin</option>
-          <option value="Manager">Manager</option>
-          <option value="Volunteer">Volunteer</option>
-        </Field>
-        {touched.role && errors.role && <p className="error">{errors.role}</p>}
-        <StyledButton type="submit">Sign up!</StyledButton>
-      </Form>
- </StyledDiv>
+        <input
+        type="password"
+        name="password"
+        value={creds.password}
+        placeholder="Password"
+        onChange={handleChange}
+        />
+      
+        <StyledButton>Sign Up!</StyledButton>
+      </form>
+      </StyledDiv>
+    </>
   );
 };
 
+export default UserForm;
 
-export default connect (null, {signUp})(withFormik({
-  mapPropsToValues({ name, email, role, tos, password }) {
-    return {
-      tos: tos || false,
-      role: role || "",
-      name: name || "",
-      email: email || "",
-      password: password || "",
-    };
-  },
-
-  validationSchema: Yup.object().shape({
-    name: Yup.string().required("Username required"),
-    email: Yup.string().required("Email Required"),
-    password: Yup.string().required("Password Required"),
-    role: Yup.string()
-      .oneOf(["Admin", "Volunteer", "Manager"])
-      .required("Please choose one!")
-  }),
-  handleSubmit(values, { props }) {
-    props.signUp(
-      {
-        username: values.username,
-        password: values.password,
-        email: values.email,
-        location: values.userLocation
-      }
-    );
-  }
-
-})(UserForm)); 
