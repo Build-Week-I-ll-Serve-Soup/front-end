@@ -49,7 +49,7 @@ const InvForm = (props) => {
     item_name: "",
 	  quantity : "",
 	  price: "",
-	  alert_when: "",
+    alert_when: "",
 	  kit_id: "",
 	  unit_id: "",
 	  cat_id: "",
@@ -57,10 +57,10 @@ const InvForm = (props) => {
   });
 
   const addItem = (e) => {
-    e.preventDefault();
      axiosWithAuth()
         .post('https://serve-soups.herokuapp.com/api/inventory', food)
-        .then(res => console.log(res))
+        .then(res => console.log(res.config.data))
+        .catch(err => console.log(err))
         props.history.push('/inventory')
     }
 
