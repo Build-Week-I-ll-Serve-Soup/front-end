@@ -123,7 +123,7 @@ function Landing() {
                 </HomeDiv>
                 <NavDiv>
                     <StyledH3><a href="https://illservesouplambda.netlify.com/">About</a></StyledH3>
-                    <StyledH3><Link to="/">Home</Link></StyledH3>
+                    <StyledH3><a href="https://illservesouplambda.netlify.com/home.html">Home</a></StyledH3>
                 </NavDiv>
             </InnerStyledHeader>
           </StyledHeader>
