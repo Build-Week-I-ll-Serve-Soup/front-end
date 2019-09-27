@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 const Styledfont = styled.h3`
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 2.0em;
+    text-align: center; 
+    padding-top: 10px; 
     margin: 0.2em;`
 
 const OuterDiv = styled.div`
@@ -33,7 +35,7 @@ const StyledOuterDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-self: center;
-    width: 80%;
+    width: 100%;
     height: 70%;
     justify-content: center;`
 
@@ -56,6 +58,11 @@ const Button = styled.button`
     text-decoration: none;
     border: 0;
     cursor: pointer;`
+
+const RegisterHere = styled.p`
+    width: 100%; 
+    text-align: center; 
+`
 
 const Login = (props) => {
   
@@ -109,7 +116,9 @@ const Login = (props) => {
           <Button>Login</Button>
           </StyledInnerDiv>
         </form>
-        <p>Don't have an account? <Link to="/register">Sign up here!</Link></p>
+        <RegisterHere>
+           <p>Don't have an account? <Link to="/register">Sign up here!</Link></p>
+        </RegisterHere> 
         </InnerDiv>
         </OuterDiv>
         </StyledOuterDiv>
