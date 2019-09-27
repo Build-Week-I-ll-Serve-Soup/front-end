@@ -11,10 +11,10 @@ const initialFood = {
     quantity : "",
     price: "",
     alert_when: "",
-    kit_id: "",
-    unit_id: "",
-    cat_id: "",
-    user_id: ""
+    kit_id: Date.now(),
+    unit_id: Date.now(),
+    cat_id: Date.now(),
+    user_id: Date.now()
 }
 
 const InventoryList = ({getInventory, inventory, isFetching, error}) => {

@@ -39,36 +39,49 @@ const StyledButton1 = styled.button`
 const InvForm = (props) => {
   
   const [food, setFood] = useState({
-    item_name: "",
-	  quantity : "",
-	  price: "",
-    alert_when: "",
-	  kit_id: "",
-	  unit_id: "",
-	  cat_id: "",
-	  user_id: ""
+    item_name: " ",
+	  quantity : Number(" "),
+	  price: Number(" "),
+    alert_when: Number(" "),
+	  kit_id: Date.now(),
+	  unit_id: Date.now(),
+	  cat_id: Date.now(),
+	  user_id: Date.now()
   });
 
+  const handleChange = e => {
+    setFood({
+        ...food,
+        [e.target.name]: e.target.value
+    })
+  }
+
   const addItem = (e) => {
+    e.preventDefault()
+   let postFood = {
+     item_name: food.item_name,
+     quantity: Number(food.quantity),
+     price: Number(food.price),
+     alert_when: Number(food.alert_when),
+     kit_id: Number(1),
+     unit_id: Number(1),
+     cat_id: Number(1),
+     user_id: Number(1)
+   }
      axiosWithAuth()
-        .post('https://serve-soups.herokuapp.com/api/inventory', food)
-        .then(res => console.log(res.config.data))
+        .post('https://serve-soups.herokuapp.com/api/inventory/post', postFood)
+        .then(res => console.log(res))
         .catch(err => console.log(err))
         props.history.push('/inventory')
     }
 
-    const handleChange = e => {
-        setFood({
-            ...food,
-            [e.target.name]: e.target.value
-        })
-    }
-
-
+  
   return (
     <>
     <StyledDiv>
-    <h1>Update Form</h1>
+
+    <h1>Add an Inventory Item</h1>
+
       <form onSubmit={addItem}>
         <input
         type="text"

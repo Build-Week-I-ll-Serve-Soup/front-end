@@ -10,6 +10,7 @@ export const getInventory = () => dispatch => {
         axiosWithAuth()
             .get('https://serve-soups.herokuapp.com/api/inventory')
             .then(res => {
+                console.log(res.data);
                 dispatch({
                     type: FETCH_SUCCESS,
                     payload: res.data
