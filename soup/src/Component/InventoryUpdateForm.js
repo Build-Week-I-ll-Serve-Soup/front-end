@@ -4,14 +4,9 @@ import styled from "styled-components"
 
 const StyledDiv = styled.div`
     width: 50%;
-    margin-left: 100px;
-    padding: 32px;
-    padding-right: 50px;
-    font-weight: bold;
-    background-color: #CA5930;
-    border: 2px dotted black;
-    margin-bottom:15px;
-    margin-top:10px;
+    padding:25%;
+    background-color: #BB4142;
+    padding-top:5%;
 `
 const StyledButton = styled.button`
     max-width: 150px;
@@ -25,7 +20,6 @@ const StyledButton = styled.button`
     margin-top:20px;
     display:flex;
     justify-content:space-between;
-
 `
 const StyledButton1 = styled.button`
     max-width: 150px;
@@ -40,7 +34,6 @@ const StyledButton1 = styled.button`
     display:flex;
     justify-content:space-between;
     border:2px solid #52B402;
-
 `
 
 const InvForm = (props) => {
@@ -86,7 +79,9 @@ const InvForm = (props) => {
   return (
     <>
     <StyledDiv>
+
     <h1>Add an Inventory Item</h1>
+
       <form onSubmit={addItem}>
         <input
         type="text"
@@ -97,7 +92,7 @@ const InvForm = (props) => {
         />
       
       <input
-        type="number"
+        type="text"
         name="quantity"
         value={food.quantity}
         placeholder="Quantity"
@@ -105,7 +100,7 @@ const InvForm = (props) => {
         />
 
         <input
-        type="number"
+        type="text"
         name="price"
         value={food.price}
         placeholder="Price"
@@ -113,7 +108,7 @@ const InvForm = (props) => {
         />
 
         <input
-        type="number"
+        type="text"
         name="alert_when"
         value={food.alert_when}
         placeholder="Alert Me When Below..."
