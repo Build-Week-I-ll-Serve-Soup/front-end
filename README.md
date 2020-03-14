@@ -1,68 +1,31 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FrontEnd
+Front-end React App
 
-## Available Scripts
+This is the repository for the Front End React App for I'll Serve Soup, a soup kitchen inventory management software.
 
-In the project directory, you can run:
+The basic components of the app are:
 
-### `npm start`
+- Landing Page - Marketing page that has navigation linking to the sign up and sign in pages.
+- Sign Up Page - Page where new users can register/sign up.
+- Sign In Page - Page where newly registered users and existing users can log in to their account.
+- Sign In/Up Navigation - Navigation for the sign in/sign up pages.
+- App Home Page - This is the portion of the app behind a PrivateRoute that is only accessible if a user is logged in.
+- App Navigation - Navigation for app users.
+- Inventory List - The list of inventory items.
+- Add Item Page - Form for adding new items.
+- Edit Item Page - Form for updating an existing item.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+There is also a supporting component called PrivateRoute and another .js file called axiosAuth that are both used in the user authentication workflow.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+The App uses React-Router to implement Client Side Routing and Redux + Redux-Thunk for application state management.
 
-### `npm test`
+The main actions are:
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Register User - Creates a new user account.
+- Login - Checks the inputted credentials and re-directs to App Home Page if authentication is successful.
+- Get Items - Gets the current Inventory List for the logged in user.
+- Add Item - Adds a new item to the Inventory List for the logged in user.
+- Update Item - Updates the selected item.
+- Delete Item - Deletes the selected item.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+We used Reactstrap for a few styled components, namely some buttons and input fields.

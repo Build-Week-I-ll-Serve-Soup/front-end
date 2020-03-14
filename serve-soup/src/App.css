@@ -1,0 +1,471 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-weight: bold;
+}
+
+.landing-page-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.landing-page-container nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.landing-page-nav-logo {
+  font-size: 30px;
+}
+
+.landing-page-nav-buttons Button {
+  margin-left: 20px;
+}
+
+.landing-page-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  background-image: url('./images/landing-page-hero.jpg');
+  background-position: bottom;
+}
+
+.landing-page-hero h1 {
+  color: white;
+  margin-bottom: 40px;
+  font-size: 40px;
+}
+
+.landing-page-hero h2 {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.landing-page-hero Button {
+  width: 400px;
+}
+
+.landing-page-content {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.landing-page-content h2 {
+  text-align: center;
+  font-size: 32px;
+  background-color: #beeef5;
+  padding: 5px;
+}
+
+.landing-page-content p {
+  font-size: 16px;
+}
+
+.landing-page-content h3 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.landing-page-content h4 {
+  font-size: 16px;
+  text-align: center;
+}
+
+.landing-page-features {
+  display: flex;
+  flex-direction: row;
+}
+
+.landing-page-features-feature {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-page-features-feature img {
+  height: 120px;
+  margin-bottom: 20px;
+}
+
+.landing-page-features-feature p {
+  width: 100%;
+  text-align: center;
+}
+
+.landing-page-team-members {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.landing-page-team-group {
+  margin-bottom: 20px;
+}
+
+.landing-page-team-group h3 {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.landing-page-team-group h4 {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.landing-page-team-member {
+  display: flex;
+  flex-direction: column;
+  width: 19%;
+}
+
+.landing-page-team-member img {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.landing-page-team-member a {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+}
+
+.landing-page-footer {
+  height: 50px;
+  background-color: #beeef5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+
+
+/* navbar styling */
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  /* align-content: center; */
+  /* background-color: #8cbd52; */
+  /* padding: 5px 0; */
+}
+
+
+.nav-logo {
+  width: auto;
+  height: 45px;
+  margin: 10px;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-around;
+  margin: 0
+}
+
+.nav-active-link {
+  background-color: red
+}
+
+.nav-bar a {
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+}
+
+.nav-container a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+
+/* add item form styling */
+.add-item-container {
+  max-width: 800px;
+  margin: 30px auto;
+
+}
+
+
+/* inventory list styling */
+
+.inventory-list-container {
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.inventory-list-container ul {
+  text-align: left
+}
+
+.inventory-list-items {
+  display: flex;
+  justify-content: space-between
+}
+
+.inventory-list-container .far {
+  margin: 0 10px
+}
+
+.inventory-list-container .far:hover {
+  color: #8cbd52;
+}
+
+sup {
+  padding-left: 40px
+}
+
+.badge-warning {
+  color: red;
+  font-size: 50px
+}
+
+
+.sign-up-container {
+  height: 100vh;
+  display: flex;
+  color: black;
+}
+
+.protected {
+  /* background-color: rgba(0, 255, 128, 0.932); */
+  padding: 25px 40px;
+  /* height: 700px; */
+
+}
+
+
+.App__Form {
+  width: 1000%;
+  background-color: rgba(0, 255, 128, 0.932);
+  padding: 25px 40px;
+  overflow: auto;
+  text-align: center;
+}
+
+.PageSwitcher {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10%;
+}
+
+.PageSwitcher__Item {
+  background-color: gray;
+  color: white;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-size: .9em;
+}
+
+.PageSwitcher__Item__Button {
+  background-color: rgba(0, 255, 128, 0.932);
+  color: black;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-size: .9em;
+  border-radius: 20px;
+}
+
+.PageSwitcher__Item:hover {
+
+  text-decoration: none;
+}
+
+.PageSwitcher__Item--Active {
+  background-color: black;
+  color: white;
+}
+
+.PageSwitcher__Item:first-child {
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.PageSwitcher__Item:last-child {
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.FormCenter {
+  margin-bottom: 100px;
+}
+
+/* Signup-signin nav bar */
+.FormTitle {
+  color: black;
+  font-weight: 300;
+  margin-bottom: 50px;
+  text-align: left;
+}
+
+.FormTitle a:hover {
+  color: black
+}
+
+.FormTitle__Link {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.7em;
+  margin: 0 10px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.FormTitle__Link:first-child {
+  margin-left: 0;
+}
+
+.FormTitle__Link--Active {
+  color: black;
+  border-bottom: 1px solid black;
+  text-align: center;
+}
+
+.FormField {
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin: 15px auto
+}
+
+.FormField__Label {
+  display: block;
+  text-transform: uppercase;
+  font-size: .9em;
+  color: black;
+}
+
+.FormField__Input {
+  width: 85%;
+  background-color: transparent;
+  border: none;
+  color: black;
+  outline: none;
+  border-bottom: 1px solid black;
+  font-size: 1em;
+  font-weight: 300;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.FormField__Input::placeholder {
+  color: black;
+}
+
+.FormField__Button {
+  background-color: black;
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 25px;
+  padding: 15px 70px;
+  font-size: .8em;
+  font-weight: 500;
+  margin-bottom: 30px
+}
+
+.FormField__Link {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  border-bottom: 1.5px solid black;
+  padding-bottom: 5px;
+}
+
+.FormField__CheckboxLabel {
+  color: black;
+  font-size: .9em;
+}
+
+.FormField__Checkbox {
+  position: relative;
+  top: 1.5px;
+}
+
+.FormField__TermsLink {
+  color: black;
+  border-bottom: 1px solid black;
+  text-decoration: none;
+  display: inline-block;
+  padding-bottom: 2px;
+  margin-left: 5px;
+}
+
+sup {
+  padding-left: 40px
+}
+
+
+.signup-spinner-container {
+  padding-top: 200px
+}
+
+
+/* success message */
+.alert-success {
+  text-align: center;
+}
