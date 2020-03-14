@@ -1,52 +1,16 @@
-import {FETCH_START, FETCH_SUCCESS} from '../actions';
-import {REGISTER_START, REGISTER_SUCCESS} from '../actions';
+import { combineReducers } from 'redux';
+import inventoryReducer from './inventoryReducer';
+import locationReducer from './locationReducer';
+import userAccountsReducer from './userAccountsReducer';
+import usersReducer from './usersReducer';
+import volunteersReducer from './volunteersReducer'
 
-const initialState = {
-    inventory: [],
-    isFetching: false,
-    error: ""
-}
 
-export const invReducer = (state = initialState, action) => {
-    switch(action.type){
-        case FETCH_START:
-            return{
-                ...state,
-                isFetching: true,
-                error: ""
-            };
-        case FETCH_SUCCESS:
-            return{
-                ...state,
-                isFetching: false,
-                inventory: action.payload
-            };
-        default:
-            return state;
-    }
-}
+export default combineReducers({
+  inventory: inventoryReducer,
+  location: locationReducer,
+  userAccounts: userAccountsReducer,
+  users: usersReducer,
+  volunteers: volunteersReducer
 
-const initialUsers = {
-    user: [],
-    isAdding: false,
-    error: ""
-}
-
-export const signupReducer = (state = initialUsers, action) => {
-    switch(action.type){
-        case REGISTER_START:
-            return{
-                ...state,
-                isAdding: true,
-                error: ""
-            };
-        case REGISTER_SUCCESS:
-            return{
-                ...state,
-                isAdding: false,
-                user: action.payload
-            };
-        default:
-            return state;
-    }
-}
+})

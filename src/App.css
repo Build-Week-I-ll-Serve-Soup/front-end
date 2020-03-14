@@ -1,32 +1,32 @@
-
-body{
-    background-color:#fff;
+.App {
+  text-align: center;
 }
 
-.deck{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 2rem;
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
 }
 
-.card{
-    flex-grow: 1;
-    border: 1px dotted black;
-    margin: 1rem;
-    padding: 1rem;
-    background-color: lightsalmon;
-    color: black;
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
-.add{
-    margin: 0 3rem;
-    padding: 2rem;
-    font-size: 2rem;
-    border-radius: 20px;
+.App-link {
+  color: #61dafb;
 }
 
-.edit{
-    width: 50%;
-    margin: 1rem auto;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

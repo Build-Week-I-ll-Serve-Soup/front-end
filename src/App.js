@@ -1,25 +1,32 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
-import PrivateRoute from './components/PrivateRoute.js';
-import Login from './Login/Login';
-import Landing from './Landing/Landing';
-import InventoryList from './components/InventoryList';
-import InvForm from './Component/InventoryUpdateForm';
-import './App.css';
-import UserForm from './Component/RegisterForm';
-import './Component/RegisterStyle.css'
+import React, { Component } from "react";
+import Inventory from "./components/Inventory";
+import DisplayInventory from "./components/DisplayInventory";
+import Authenticate from "./components/Authenticate";
+import VolunteerRegister from "./components/VolunteerRegister";
+import VolunteersLogin from "./components/VolunteersLogin";
+import LocationFinder from "./components/LocationFinder";
+import "./App.css";
+import { Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
 
-function App() {
-
-  return (
-    <div className="App">
-      <Route exact path='/' component ={Landing}/>
-      <Route path='/login' component={Login}/>
-      <Route path='/register' component={UserForm}/>
-      <PrivateRoute path='/inventory' component={InventoryList}/>
-      <PrivateRoute path='/add' component={InvForm}/>
-    </div>
-  );
+class App extends Component {
+	render() {
+		return (
+			<div className="App">
+				<NavBar />
+				<Route exact path="/" component={DisplayInventory} />
+				<Route path="/display" component={DisplayInventory} />
+				<Route path="/inventory" component={Inventory} />
+				<Route path="/locations" component={LocationFinder} />
+				<Route
+					path="/volunteerRegister"
+					component={VolunteerRegister}
+				/>
+				<Route path="/volunteerLogin" component={VolunteersLogin} />
+			</div>
+		);
+	}
 }
+const WrappedComponent = Authenticate(App);
 
-export default App;
+export default WrappedComponent;

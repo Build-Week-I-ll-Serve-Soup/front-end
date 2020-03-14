@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+#us-map{
+   margin-top:40px;
+}
+.state {fill:#EF5E4A;}
+
+path:hover, circle:hover {
+  stroke: #2e3842 !important;
+  stroke-width:2px;
+  stroke-linejoin: round;
+  fill: #FDCEC6 !important;
+  cursor: pointer;
+}
+
+.map-container{
+  width:100%;
+  background-color: #2e3842;
+  height:100vh
+}
+h1{
+  font-size:50px;
+  padding-top:30px;
+
+  margin-top: 0;
+
+  color:white;
+  font-family: 'Open Sans'
+}
