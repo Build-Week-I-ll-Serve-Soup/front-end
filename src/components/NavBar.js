@@ -1,22 +1,27 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import "./NavBar.css";
-import logo from "./isslogo.svg";
+import {NavLink} from "react-router-dom";
+import logo128 from "../img/logo/png/green/primary-700-128.png";
 
-const NavBar = () => {
-	return (
-		<nav>
-			<NavLink to="/">
-				<img src={logo} height="40px" alt="I'll Serve Soup Logo" />
-			</NavLink>
-			<div className="link-wrapper">
-				<NavLink to="/display">Display Inventory</NavLink>
-				<NavLink to="/locations">Locations</NavLink>
-				<NavLink to="/volunteerRegister">Register Volunteer</NavLink>
-				<NavLink to="/volunteerLogin">Login Volunteer</NavLink>
-			</div>
-		</nav>
-	);
-};
+const NavBar = props => {
+    return (
+        <header>
+            <div className="nav-wrap">
+                <div className="img-container">
+                   <img alt="I'll Serve Soup logo" src={logo128} />
+                </div>
+                <a href="/" className="nodecoration">
+                    <div className="header-text">
+                        <h1>I'll Serve Soup</h1>
+                    </div>
+                </a>
+                    <nav>
+                    <NavLink className="decor" activeClassName="selected-nav" exact to="/" onClick={props.clearSearch}>View Inventory</NavLink>
+                    <NavLink className="decor" activeClassName="selected-nav" exact to="/add" onClick={props.clearSearch}>Add Inventory</NavLink>
+                    <NavLink className="decor-outline" exact to="/"  onClick={props.logOut}>Log Out</NavLink>
+                </nav>
+            </div>
+        </header>
+    )
+}
 
 export default NavBar;
